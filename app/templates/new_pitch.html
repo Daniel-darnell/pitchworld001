@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+ {%block styles%}
+  {{ super() }}
+
+{%endblock%}
+
+{% block content %}
+
+    <div id="particles-js" style="background-color: azure">
+      <div class=" row">
+    
+        <div class="col-md-2"></div>
+        <div class="col-md-8" id="postform">
+          <h2 class="text-center"> {{category.name|upper}} Create Your Pitch Here!</h2>
+          {{wtf.quick_form(pitch_form)}}
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+{% endblock %}

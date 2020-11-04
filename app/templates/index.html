@@ -1,0 +1,40 @@
+{% extends 'base.html'%} {% import 'macros.html' as macro%} {% block styles%} {{
+super() }}
+{% endblock %} {% block content %}
+
+<div class="container" style="background-color: black">
+ 
+    <h3 class="text-left" style="padding-left: 2.3em;">
+      <a class="btn btn-primary" href="/add/category"><span class="glyphicon glyphicon-plus"> </span> Make your Pitch Here
+      </a>
+    </h3>
+    <p style="padding-left: 4em; text-decoration: underline; color: azure;"><b>THESE ARE PITCHY CATEGORIES</b></p>
+    
+    <div class="col-md-6 ml-10">
+        <div class="card">
+          <div class="container">
+          <p>{{ macro.displayCategoryList(categories) }}</p>
+          </div>
+        </div>
+    </div>
+  
+
+
+{% endblock %} {% macro displayPitches(pitch_list) %}
+<div class="container ml-10" style="background-color:black">
+  <div class="col-md-6" style="padding-left:4em;">
+    <div class="card">
+      <h1>{{ pitches.pitch }}</h1>
+    </div>
+  </div>
+  <div class="grid-container">
+
+    <p>Posted On: {{ pitches.date_posted.strftime("%m/%d/%Y, %H:%M:%S")}}</p>
+    <a href="/pitch/{{pitches.id}}">
+      <h2>Comment</h2>
+    </a>
+  </div>
+</div>
+</div>
+
+{% endmacro %}
